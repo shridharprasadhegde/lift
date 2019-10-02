@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="MutualFriends"> Mutual Friends </title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+</head>
+<body>
+<h1 th:text=" MutualFriends "> Mutual Friends </h1>
+<form action="#" th:action="@{/}" th:object="${accounts}" method="GET">
+<table>
+    <tr>
+        <th th:text="UserId"/></th>
+        <th th:text="UserName"></th>
+        <th th:text="ScreenName"></th>
+    </tr>
+    <tr th:each="user : ${allUsers}">
+        <td th:text="${user.id}">Id</td>
+        <td th:text="${user.name}">Name</td>
+        <td th:text="${user.screen_name}">ScreenName</td>
+    </tr>
+    <tr><td colspan="2">
+        <input type="submit" th:value="Back"/>
+    </td>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<h1>Lists Mutual Friends </h1>
+<form action="#" th:action="@{/display}" th:object="${accounts}" method="GET">
+    <table>
+
+        <tr><td th:text="TwitterAccount"/></td>
+            <td>
+                <input type="text" th:field="*{twitterAccountFirst}" />
+            </td>
+        </tr>
+        <tr><td th:text="TwitterAccount"></td>
+            <td>
+                <input type="text" th:field="*{twitterAccountSecond}" />
+            </td>
+        </tr>
+        <tr><td colspan="2">
+            <input type="submit" th:value="Submit"/>
+            <input type="reset" th:value="Reset"/>
+        </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
